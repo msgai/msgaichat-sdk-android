@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 repositories{
     maven {
-        url  "http://dl.bintray.com/msgai/maven"
+        url "https://raw.github.com/msgai/msgaichat-sdk-android/master"
     }
 }
 
