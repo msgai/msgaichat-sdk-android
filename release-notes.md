@@ -1,5 +1,10 @@
 # MsgaiChat SDK Android Release Notes
 
+## 1.0.1
+2019-02-04
+
+* Performance enhancements.
+
 ## 1.0
 2019-02-01
 
@@ -11,7 +16,6 @@
 * Added multiline message support.
 * Persistent Menu.
 * Bug fixings.
-
 
 ## 0.0.2
 2018-09-07
