@@ -7,6 +7,7 @@
    * onChatActivityPaused()
    * onChatActivityStopped()
    * onChatActivityDestroyed()
+* Minor performance improvements.
 
 ## 1.1.0
 2019-02-06
