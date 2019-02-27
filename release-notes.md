@@ -3,7 +3,7 @@
 ## 1.1.2
 2019-02-27
 * Specifying Google Maps key is now optional. Specifying this key in manifest file will make 'Send Location' button visible otherwise this button will be hidden.
-* Now you don't need to pass 'config.json' while calling MsgaiChat.init(), Instead of this app need to put attached 4 files in assets folder. copy_templates.json, faq_info.json, persistent_menu.json, theme.json
+* Now app don't need to pass 'config.json' while calling MsgaiChat.init(), Instead of this app need to put attached 4 files in assets folder. copy_templates.json, faq_info.json, persistent_menu.json, theme.json
 * For menu localisation, use below method.
   settings.setLanguageCode("EN"); OR settings.setLanguageCode("FR"); Current version supports two languages EN and FR.
   
