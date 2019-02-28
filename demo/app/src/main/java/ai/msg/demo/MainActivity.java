@@ -23,32 +23,42 @@ public class MainActivity extends AppCompatActivity {
 
     TextView fistName, lastName;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        fistName = (TextView)findViewById(R.id.text_first_name);
-        lastName = (TextView)findViewById(R.id.text_last_name);
+        fistName = (TextView) findViewById(R.id.text_first_name);
+        lastName = (TextView) findViewById(R.id.text_last_name);
 
         Settings settings = new Settings("#MSGAIBotKey", "#SecretKey");
         settings.setBrandName("#BrandName");
         settings.setBrandLogoImage(BitmapFactory.decodeResource(getResources(), R.drawable.msgaichat_icon));
-/*
-        settings.setReceiverBubbleColor("#" + Integer.toHexString (getResources().getColor(R.color.colorChatSenderClient)));
-        settings.setSenderBubbleColor("#" + Integer.toHexString (getResources().getColor(R.color.colorChatReceiverClient)));
-*/
 
         MsgaiChat.init(MainActivity.this, settings, new MsgaiChatListener() {
             @Override
             public void userMessagePosted(String messageJson) {
-                Log.i(TAG, "User posted message: "+messageJson);
+                Log.i(TAG, "User posted message: " + messageJson);
             }
 
             @Override
             public void botPostedMessage(String messageJson) {
-                Log.i(TAG, "Bot posted message: "+messageJson);
+                Log.i(TAG, "Bot posted message: " + messageJson);
+            }
+
+            @Override
+            public void chatActivityStopped() {
+
+            }
+
+            @Override
+            public void chatActivityPaused() {
+
+            }
+
+            @Override
+            public void chatActivityDestroyed() {
+
             }
         });
 
@@ -59,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
         user.setGender(User.GenderMale);
         user.setLocation("New York");
 
-        // Add your own custom properties
         final Map<String, Object> customProperties = new HashMap<>();
         customProperties.put("Last Seen", new Date());
         customProperties.put("isFirstTime", false);
@@ -67,14 +76,13 @@ public class MainActivity extends AppCompatActivity {
         user.addProperties(customProperties);
 
 
-
-        Button chatButton = (Button)findViewById(R.id.start_chat);
+        Button chatButton = (Button) findViewById(R.id.start_chat);
 
         chatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MsgaiChat.startChat();
-           }
+            }
         });
 
     }
