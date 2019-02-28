@@ -1,5 +1,9 @@
 # MsgaiChat SDK Android Release Notes
 
+## 1.1.3
+2019-02-28
+* Fixes for scenrios where app has Firebase setup itself.
+
 ## 1.1.2
 2019-02-27
 * Specifying Google Maps key is now optional. Specifying this key in manifest file will make 'Send Location' button visible otherwise this button will be hidden.
