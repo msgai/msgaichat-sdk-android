@@ -1,5 +1,10 @@
 # MsgaiChat SDK Android Release Notes
 
+## 1.1.7
+2019-04-08
+* Multi-language support.
+* Minor enhancements.
+
 ## 1.1.3
 2019-02-28
 * Fixes for scenrios where app has Firebase setup itself.
