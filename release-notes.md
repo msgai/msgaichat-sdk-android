@@ -1,5 +1,9 @@
 # MsgaiChat SDK Android Release Notes
 
+## 1.1.8
+2019-06-26
+* Minor Bug fixes and performance enhancements.
+
 ## 1.1.7
 2019-04-08
 * Multi-language support.
