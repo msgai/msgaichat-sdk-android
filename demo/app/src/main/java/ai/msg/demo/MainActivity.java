@@ -3,6 +3,7 @@ package ai.msg.demo;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatTextView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import ai.msg.msgaichat.model.LogError;
+import ai.msg.msgaichat.model.LogType;
 import ai.msg.msgaichat.model.User;
 import ai.msg.msgaichat.utils.MsgaiChat;
 import ai.msg.msgaichat.utils.MsgaiChatListener;
@@ -21,21 +24,21 @@ public class MainActivity extends AppCompatActivity {
 
     private static String TAG = MainActivity.class.getName();
 
-    TextView fistName, lastName;
+    AppCompatTextView fistName, lastName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        fistName = (TextView) findViewById(R.id.text_first_name);
-        lastName = (TextView) findViewById(R.id.text_last_name);
+        fistName = (AppCompatTextView) findViewById(R.id.text_first_name);
+        lastName = (AppCompatTextView) findViewById(R.id.text_last_name);
 
         Settings settings = new Settings("#MSGAIBotKey", "#SecretKey");
         settings.setBrandName("#BrandName");
         settings.setBrandLogoImage(BitmapFactory.decodeResource(getResources(), R.drawable.msgaichat_icon));
 
-        MsgaiChat.init(MainActivity.this, settings, new MsgaiChatListener() {
+        MsgaiChat.getInstance().init(MainActivity.this, settings, new MsgaiChatListener() {
             @Override
             public void userMessagePosted(String messageJson) {
                 Log.i(TAG, "User posted message: " + messageJson);
@@ -60,6 +63,11 @@ public class MainActivity extends AppCompatActivity {
             public void chatActivityDestroyed() {
 
             }
+
+            @Override
+            public void logEvent(LogType logType, String s, LogError logError) {
+
+            }
         });
 
         User user = User.currentUser();
@@ -81,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         chatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MsgaiChat.startChat();
+                MsgaiChat.getInstance().startChat();
             }
         });
 
