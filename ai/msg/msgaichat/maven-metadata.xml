@@ -3,7 +3,7 @@
   <groupId>ai.msg</groupId>
   <artifactId>msgaichat</artifactId>
   <versioning>
-    <release>1.1.7.3</release>
+    <release>1.1.8</release>
     <versions>
       <version>1.1.1</version>
       <version>1.1.0.0.1</version>
@@ -24,7 +24,8 @@
       <version>1.1.7.1</version>
       <version>1.1.7.2</version>
       <version>1.1.7.3</version>
+      <version>1.1.8</version>
     </versions>
-    <lastUpdated>20190626072500</lastUpdated>
+    <lastUpdated>20190626073402</lastUpdated>
   </versioning>
 </metadata>
